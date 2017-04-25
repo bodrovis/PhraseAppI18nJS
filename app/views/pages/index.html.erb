@@ -1,0 +1,16 @@
+<h1 class="page-title"></h1>
+
+<p class="messages-count"></p>
+
+<p class="current-date"></p>
+
+<script>
+  $(document).on('turbolinks:load', function() {
+    $('.page-title').text(I18n.t('pages.index.title', {name: 'Joe'}));
+
+    $('.messages-count').text(I18n.t('pages.index.messages', {count: 1}));
+
+    var date = new Date();
+    $('.current-date').text(I18n.l("date.formats.long", date));
+  });
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>I18nJS</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body data-locale="<%= I18n.locale %>">
+
+<ul>
+  <li><%= link_to 'English', root_path(locale: :en) %></li>
+  <li><%= link_to 'Русский', root_path(locale: :ru) %></li>
+</ul>
+
+<ul>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'About', about_path %></li>
+</ul>
+
+<%= yield %>
+</body>
+</html>
